@@ -68,7 +68,7 @@ void setup()
       FSUsed = fs_info.usedBytes;
     }
   }
-
+  server.on ( "/format", handleFormat );
   // upload file to SPIFFS
   server.on("/fupload2", HTTP_POST, []() {
     server.sendHeader("Connection", "close");
